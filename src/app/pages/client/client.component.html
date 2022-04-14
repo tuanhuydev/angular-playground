@@ -1,0 +1,23 @@
+<div cdkDropList cdkDropListOrientation="horizontal" class="flex" style="height: 100vh;" (cdkDropListDropped)="drop($event)">
+  <div class="p-0 text-center transition-duration-400" [class.col]="section === 'right'" [class.splitter]="section === 'splitter'" *ngFor="let section of sections" cdkDragLockAxis="x" cdkDrag>
+    <div class="h-full left" *ngIf="section === 'left'" #resizeBox>
+      <div class="flex justify-content-between align-items-center p-3 relative" [style.width.px]="width">
+        <code >&#60;left-pannel&#62;</code>
+        <svg width="24px" fill="currentColor" viewBox="0 0 24 24" cdkDragHandle>
+          <path d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"></path>
+          <path d="M0 0h24v24H0z" fill="none"></path>
+        </svg>
+      </div>
+      <div #dragHandleRight cdkDragLockAxis="x" class="dragHandle right" cdkDrag ></div>
+    </div>
+    <div class="h-full right" *ngIf="section === 'right'">
+      <div class="flex justify-content-between align-items-center p-3">
+        <code >&#60;right-pannel&#62;</code>
+        <svg width="24px" fill="currentColor" viewBox="0 0 24 24" cdkDragHandle>
+          <path d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"></path>
+          <path d="M0 0h24v24H0z" fill="none"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
